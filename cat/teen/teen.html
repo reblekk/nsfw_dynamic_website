@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            background: #222;
+            background-color: #111;
+            overflow-x: hidden;
+            margin-right: 0;
+        }
+        
+        @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+        h1 {
+            font-size: 100000px;
+            text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+            color: #fff6a9;
+            font-family: "Sacramento", cursive;
+            text-align: center;
+            animation: blink 12s infinite;
+            justify-content: center;
+            align-items: center;
+            -webkit-animation: blink 12s infinite;
+            margin-top: 50;
+            background-color: black;
+            padding: 2vh;
+        }
+        
+        @-webkit-keyframes blink {
+            20%,
+            24%,
+            55% {
+                color: #111;
+                text-shadow: none;
+            }
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+                text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+                color: #fff6a9;
+            }
+        }
+        
+        @keyframes blink {
+            20%,
+            24%,
+            55% {
+                color: #111;
+                text-shadow: none;
+            }
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+                text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+                color: #fff6a9;
+            }
+        }
+        
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 30px;
+            background-color: #0C9;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+        }
+        
+        .float2 {
+            border-radius: 25px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            width: 100px;
+            height: 60px;
+            position: fixed;
+            bottom: 40px;
+            left: 20px;
+            background-color: #0C9;
+            color: #FFF;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+            font-size: 20px;
+        }
+        
+        .float3 {
+            text-decoration: none;
+            border-radius: 25px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            width: 120px;
+            height: 60px;
+            position: fixed;
+            bottom: 40px;
+            left: 140px;
+            background-color: #0C9;
+            color: #FFF;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+            font-size: 20px;
+        }
+        
+        .my-float {
+            margin-top: 20px;
+        }
+        
+        a:link {
+            text-decoration: none;
+        }
+        
+        a:link:active {
+            text-decoration: none;
+        }
+        
+        a:link:visited {
+            text-decoration: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable button").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <title>NSFW</title>
+</head>
+
+<body>
+
+    <h1 style="font-size: 5vh;"> Teen </h1>
+
+    <div class="row" id="div">
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="#" class="float">
+                <i class="fas fa-arrow-up fa-lg my-float"></i>
+            </a>
+        </div>
+        <div class="c">
+            <a href="../../index.html" class="float2 ">
+                <p>Home</p>
+            </a>
+        </div>
+        <div class="col">
+            <a class="float3" type="submit" onClick="refreshPage()">Refresh</a>
+        </div>
+
+    </div>
+
+    <script>
+        function refreshPage() {
+            window.location.reload();
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
